@@ -9,9 +9,9 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-import controleur_vie
+import vue_vie
 
 if __name__ == '__main__':
     #lance le jeu
-    controleur_vie.demarer_jeu()
+    vue_vie.demarer_jeu()
 
