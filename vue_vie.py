@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:        module1
+# Name:        vue vie
 # Purpose:
 #
 # Author:      Gabriel-le
@@ -9,8 +9,11 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-def main():
-    pass
+import controleur_vie
 
-if __name__ == '__main__':
-    main()
+"""Est ce que pour afficher dans la console le fichier vue est nécessaire ???
+C'est le controleur qui fera les print et imput"""
+
+#affichage = "vide"
+
+#print(affichage)
