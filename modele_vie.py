@@ -12,6 +12,7 @@
 import controleur_vie
 
 class Ecran():
+
     def ecran_ouverture_jeu(self):
         affiche = """Bienvenu sur mon programme
 
@@ -32,3 +33,4 @@ class Ecran():
     def ecran_debut_partie(self):
         affiche = "partie en cours"
         return affiche
+
