@@ -9,13 +9,11 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-
 import time
 import sys
 import os
-
+#---
 import controleur_vie
-
 
 class Ecran():
     def ecran_ouverture_jeu(self):
@@ -39,8 +37,6 @@ class Ecran():
         affiche = "partie en cours"
         return affiche
 
-
-
 #-------------------------------------------------------------------------------
 
 les_ecrans = Ecran()
@@ -56,7 +52,7 @@ def demarer_jeu():
     efface_console()
     affiche = les_ecrans.ecran_ouverture_jeu()
     print(affiche)
-    time.sleep(2)
+    time.sleep(1)
     menu_principal()
 
 def menu_principal():
@@ -66,11 +62,13 @@ def menu_principal():
     choix = input ("rentrer la lettre demandé.\nNouvelle partie aléatoire (N) \nQuitter(Q)")
     controleur_vie.gestion_choix_menu_principal(choix)
 
-def nouvelle_partie():
+def nouvelle_partie(grille):
     efface_console()
     affiche = les_ecrans.ecran_debut_partie()
     print(affiche)
-    time.sleep(5)
+    time.sleep(1)
+    print(grille)
+    time.sleep(2)
     menu_principal()
 
 def quitter():
@@ -78,7 +76,3 @@ def quitter():
     affiche = les_ecrans.ecran_quitter()
     print(affiche)
     exit()
-
-#affichage = "vide"
-
-#print(affichage)
