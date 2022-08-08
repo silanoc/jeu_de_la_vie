@@ -59,17 +59,23 @@ def menu_principal():
     efface_console()
     affiche = les_ecrans.ecran_menu()
     print(affiche)
-    choix = input ("rentrer la lettre demandé.\nNouvelle partie aléatoire (N) \nQuitter(Q)")
+    choix = input ("rentrer la lettre demandée.\nNouvelle partie aléatoire (N) \nQuitter(Q)")
     controleur_vie.gestion_choix_menu_principal(choix)
 
-def nouvelle_partie(grille):
+def nouvelle_partie(grille, grille_de_jeu):
     efface_console()
     affiche = les_ecrans.ecran_debut_partie()
     print(affiche)
     time.sleep(1)
-    print(grille)
+    affiche_une_grille(grille, grille_de_jeu)
+
+def affiche_une_grille(grille, grille_de_jeu):
+    for ligne in grille:
+        print(ligne)
     time.sleep(2)
-    menu_principal()
+    choix = input("encore un tour O/n")
+    controleur_vie.gestion_demande_nouveau_tour(choix, grille, grille_de_jeu)
+
 
 def quitter():
     efface_console()
