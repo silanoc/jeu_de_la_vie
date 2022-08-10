@@ -1,12 +1,11 @@
 #-------------------------------------------------------------------------------
 # Name:        vue vie
-# Purpose:
+# Purpose:     dans le modèle MVC le gestionnaire de vue.
 #
-# Author:      Gabriel-le
+# Author:      silanoc
 #
 # Created:     08/08/2022
-# Copyright:   (c) Gabriel-le 2022
-# Licence:     <your licence>
+# Version :    1.0
 #-------------------------------------------------------------------------------
 
 import time
@@ -16,12 +15,16 @@ import os
 import controleur_vie
 
 class Ecran():
+    """Classe contenant toutes les zones de textes à afficher.
+    Permet d'alléger les fonctions de la vue."""
+
     def ecran_ouverture_jeu(self):
+        """Premier affichage à l'ouverture du programme"""
         affiche = """Bienvenu sur mon programme
 
         Jeu de la vie
 
-        by silanoc - aout 2022"""
+        by Silanoc - août 2022"""
 
         return affiche
 
@@ -49,6 +52,7 @@ def efface_console():
 		os.system("clear")
 
 def demarer_jeu():
+    """Première fonction appelée au démarage du jeu"""
     efface_console()
     affiche = les_ecrans.ecran_ouverture_jeu()
     print(affiche)
@@ -84,7 +88,6 @@ def affiche_une_grille(grille, grille_de_jeu):
     time.sleep(1)
     choix = input("encore un tour O/n")
     controleur_vie.gestion_demande_nouveau_tour(choix, grille, grille_de_jeu)
-
 
 def quitter():
     efface_console()

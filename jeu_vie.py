@@ -1,12 +1,11 @@
 #-------------------------------------------------------------------------------
 # Name:        jeu_vie
-# Purpose:
+# Purpose:     démare le jeu.
 #
-# Author:      Gabriel-le
+# Author:      silanoc
 #
 # Created:     08/08/2022
-# Copyright:   (c) Gabriel-le 2022
-# Licence:     <your licence>
+# Version :    1.0
 #-------------------------------------------------------------------------------
 
 import vue_vie

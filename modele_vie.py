@@ -1,12 +1,12 @@
 #-------------------------------------------------------------------------------
 # Name:        modele vie
-# Purpose:
+# Purpose:     Dans une achitecture MVC, la partie modele du jeu de la vie.
+#              Contient la class Automate, qui est le moteur du jeu.
 #
-# Author:      Gabriel-le
+# Author:      silanoc
 #
 # Created:     08/08/2022
-# Copyright:   (c) Gabriel-le 2022
-# Licence:     <your licence>
+# Version:     1.0
 #-------------------------------------------------------------------------------
 
 import random
@@ -14,12 +14,12 @@ import random
 import controleur_vie
 
 class Automate():
-    """génére une grille et les regles de bases du jeu"""
+    """génére une grille et les règles de bases du jeu"""
 
     def __init__(self, taille = (10, 10)):
-        """initialise le jeu avec une grille de 10 sur 10 par defaut
+        """initialise le jeu avec une grille de 10 sur 10 par défaut
         arg
-        - taille (turple) : donne le nombre de lignes et de colonnes.
+        - taille (turple) : définit le nombre de lignes et de colonnes voulues.
             par defaut 10 sur 10 (10, 10)
         """
         self.taille = taille
@@ -33,7 +33,7 @@ class Automate():
         return remplissage
 
     def calcul_etat_initial(self):
-        """pour chaque cellule compte le nombre de voisin vivant.
+        """pour chaque cellule compte le nombre de voisines vivantes.
         L'écrire dans le tableau grille de calcul
         retourner ce tableau"""
 
@@ -71,11 +71,11 @@ class Automate():
                 elif ligne == self.nb_ligne -1 and colonne == self.nb_colonne - 1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
-        print(grille_de_calcul)
         return grille_de_calcul
 
     def donne_etat_final(self, valeurs_des_voisins):
-        """pour chaque cellule de la grille, applique les régles du jeu écritent dans les deux dictionnaires.
+        """pour chaque cellule de la grille, applique les régles du jeu écrites dans les deux dictionnaires.
+        Cela permet de simplifier le style et changer les régles si on veut.
         Ecrit directement dans la grille le nouvel état."""
 
         dico_si_vivant = {0:0, 1:0, 2:1, 3:1, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0}
@@ -89,6 +89,6 @@ class Automate():
                     self.grille[ligne][colonne] = dico_si_vivant[valeurs_des_voisins[ligne][colonne]]
 
     def genere_nouvelle_generation(self):
+        """Pour enchainer deux méthodes, qui correspondent à une action pour le visuel.
         valeurs_des_voisins = self.calcul_etat_initial()
         self.donne_etat_final(valeurs_des_voisins)
-

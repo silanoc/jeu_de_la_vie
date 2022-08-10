@@ -1,19 +1,15 @@
 #-------------------------------------------------------------------------------
 # Name:        controleur vie
-# Purpose:
+# Purpose:     dans une architecture MVC, contrôeleur du jeu de la vie.
 #
-# Author:      Gabriel-le
+# Author:      silanoc
 #
 # Created:     08/08/2022
-# Copyright:   (c) Gabriel-le 2022
-# Licence:     <your licence>
+# Version :    1.0
 #-------------------------------------------------------------------------------
 
 import vue_vie
 import modele_vie
-
-#global grille_de_jeu
-#grille_de_jeu = modele_vie.Automate((1,1))
 
 def creer_une_grille_initale():
     grille_de_jeu = modele_vie.Automate((5,5))
