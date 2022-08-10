@@ -38,7 +38,7 @@ class Automate():
         retourner ce tableau"""
 
         grille_de_calcul = [["" for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
-        for ligne in range(self.nb_ligne -1):
+        for ligne in range(self.nb_ligne):
             for colonne in range(self.nb_colonne):
                 # première ligne
                 if ligne == 0 and colonne == 0:
@@ -46,31 +46,32 @@ class Automate():
                 elif ligne == 0 and colonne > 0 and colonne < self.nb_colonne -1 :
                     grille_de_calcul[ligne][colonne] = self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne] + self.grille[ligne + 1][colonne + 1]
-                elif ligne == 0 and colonne == self.nb_colonne:
+                elif ligne == 0 and colonne == self.nb_colonne - 1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne][colonne - 1] + self.grille[ligne + 1][colonne -1]  + self.grille[ligne + 1][colonne]
                 # toutes les lignes sauf première et dernière
-                elif ligne > 0 and ligne < self.nb_ligne and colonne == 0:
+                elif ligne > 0 and ligne < self.nb_ligne -1 and colonne == 0:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne] + self.grille[ligne + 1][colonne + 1]
-                elif ligne > 0 and ligne < self.nb_ligne and colonne > 0 and colonne < self.nb_colonne - 1:
+                elif ligne > 0 and ligne < self.nb_ligne -1 and colonne > 0 and colonne < self.nb_colonne - 1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne] + self.grille[ligne + 1][colonne + 1]
-                elif ligne > 0 and ligne < self.nb_ligne and colonne == self.nb_colonne:
+                elif ligne > 0 and ligne < self.nb_ligne -1 and colonne == self.nb_colonne - 1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne]
                 # dernière ligne
-                elif ligne == self.nb_ligne and colonne == 0:
+                elif ligne == self.nb_ligne -1 and colonne == 0:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne + 1]
-                elif ligne == self.nb_ligne and colonne > 0 and colonne < self.nb_colonne -1:
+                elif ligne == self.nb_ligne -1 and colonne > 0 and colonne < self.nb_colonne -1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
-                elif ligne == self.nb_ligne and colonne == self.nb_colonne:
+                elif ligne == self.nb_ligne -1 and colonne == self.nb_colonne - 1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
+        print(grille_de_calcul)
         return grille_de_calcul
 
     def donne_etat_final(self, valeurs_des_voisins):
@@ -82,12 +83,10 @@ class Automate():
 
         for ligne in range(self.nb_ligne):
             for colonne in range(self.nb_colonne):
-                if self.grille[ligne][colonne] == 0 and valeurs_des_voisins[ligne][colonne] != "":
+                if self.grille[ligne][colonne] == 0:
                     self.grille[ligne][colonne] = dico_si_mort[valeurs_des_voisins[ligne][colonne]]
-                elif self.grille[ligne][colonne] == 1 and valeurs_des_voisins[ligne][colonne] != "":
+                elif self.grille[ligne][colonne] == 1:
                     self.grille[ligne][colonne] = dico_si_vivant[valeurs_des_voisins[ligne][colonne]]
-                else:
-                    self.grille[ligne][colonne] = self.grille[ligne][colonne]
 
     def genere_nouvelle_generation(self):
         valeurs_des_voisins = self.calcul_etat_initial()
