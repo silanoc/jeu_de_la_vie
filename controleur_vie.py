@@ -11,18 +11,20 @@
 import vue_vie
 import modele_vie
 
-def creer_une_grille_initale():
-    grille_de_jeu = modele_vie.Automate((5,5))
+def creer_une_grille_initale(ligne, colonne):
+    grille_de_jeu = modele_vie.Automate((ligne,colonne))
     grille_de_jeu.grille = grille_de_jeu.remplissage_aleatoire_a_la_creation()
-    return grille_de_jeu
+    vue_vie.nouvelle_partie(grille_de_jeu.grille, grille_de_jeu)
 
 def gestion_choix_menu_principal(choix):
     if choix == "Nouvelle partie aléatoire":
-        grille_de_jeu = creer_une_grille_initale()
-        affichage = grille_de_jeu.grille
-        vue_vie.nouvelle_partie(affichage, grille_de_jeu)
+        vue_vie.choix_taille_grille()
+        #vue_vie.nouvelle_partie(affichage, grille_de_jeu)
     elif choix == "Quitter":
         vue_vie.quitter()
+
+def gestion_choix_taille(ligne, colonne):
+    grille_de_jeu = creer_une_grille_initale(ligne, colonne)
 
 def gestion_demande_nouveau_tour(choix, grille, grille_de_jeu):
     if choix == False:

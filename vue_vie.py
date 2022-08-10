@@ -34,12 +34,17 @@ class Ecran():
         affiche = "Vous avez plusieurs choix"
         return affiche
 
-    def ecran_quitter(self):
-        affiche = "Merci d'avoir utilisé ce programme. A une prochaine occasion."
+    def ecran_demande_taille_grille(self):
+        affiche = """Quelle taille voulez-vous pour la grilel de jeu ?
+        Merci de rentrer un nombre entier positif à chaque fois."""
         return affiche
 
     def ecran_debut_partie(self):
         affiche = "partie en cours"
+        return affiche
+
+    def ecran_quitter(self):
+        affiche = "Merci d'avoir utilisé ce programme. A une prochaine occasion."
         return affiche
 
 #-------------------------------------------------------------------------------
@@ -67,6 +72,28 @@ def menu_principal():
     print(affiche)
     choix = questionary.select("Que voulez-vous faire ?", choices = ['Nouvelle partie aléatoire', 'Quitter']).ask()
     controleur_vie.gestion_choix_menu_principal(choix)
+
+def choix_taille_grille():
+    efface_console()
+    affiche = les_ecrans.ecran_demande_taille_grille()
+    print(affiche)
+    ok = False
+    while  ok == False or ligne < 0 :
+        ligne = questionary.text("nombre de ligne").ask()
+        try:
+            ligne = int(ligne)
+            ok = True
+        except:
+            ok = False
+    ok = False
+    while ok == False or colonne < 0:
+        colonne = questionary.text("nombre de colonne").ask()
+        try:
+            colonne = int(colonne)
+            ok = True
+        except:
+            ok = False
+    controleur_vie.gestion_choix_taille(ligne, colonne)
 
 def nouvelle_partie(grille, grille_de_jeu):
     efface_console()
