@@ -32,19 +32,6 @@ class Automate():
         remplissage = [[random.randint(0,1) for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
         return remplissage
 
-    def affichage_grille(self):
-        """affiche dans la consolle la grille
-        pour plus de lisibilité, espace vide si 0 et X si vivant"""
-
-        for ligne in range(self.nb_ligne):
-            affiche = ""
-            for colonne in range(self.nb_colonne):
-                if self.grille[ligne][colonne] == 0:
-                    affiche += " "
-                else:
-                    affiche += "X"
-            print(affiche)
-
     def calcul_etat_initial(self):
         """pour chaque cellule compte le nombre de voisin vivant.
         L'écrire dans le tableau grille de calcul
@@ -75,13 +62,13 @@ class Automate():
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne]
                 # dernière ligne
-                elif ligne == 0 and colonne == 0:
+                elif ligne == self.nb_ligne and colonne == 0:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne + 1]
-                elif ligne == 0 and colonne > 0 and colonne < self.nb_colonne -1:
+                elif ligne == self.nb_ligne and colonne > 0 and colonne < self.nb_colonne -1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
-                elif ligne == 0 and colonne == self.nb_colonne:
+                elif ligne == self.nb_ligne and colonne == self.nb_colonne:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
         return grille_de_calcul

@@ -48,7 +48,7 @@ class Automate():
         retourner ce tableau"""
 
         grille_de_calcul = [["" for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
-        for ligne in range(self.nb_ligne -1):
+        for ligne in range(self.nb_ligne-1):
             for colonne in range(self.nb_colonne):
                 # première ligne
                 if ligne == 0 and colonne == 0:
@@ -72,13 +72,13 @@ class Automate():
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne]
                 # dernière ligne
-                elif ligne == 0 and colonne == 0:
+                elif ligne == self.nb_ligne and colonne == 0:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne + 1]
-                elif ligne == 0 and colonne > 0 and colonne < self.nb_colonne -1:
+                elif ligne == self.nb_ligne and colonne > 0 and colonne < self.nb_colonne -1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
-                elif ligne == 0 and colonne == self.nb_colonne:
+                elif ligne == self.nb_ligne and colonne == self.nb_colonne:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
         return grille_de_calcul

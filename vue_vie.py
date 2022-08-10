@@ -70,9 +70,18 @@ def nouvelle_partie(grille, grille_de_jeu):
     affiche_une_grille(grille, grille_de_jeu)
 
 def affiche_une_grille(grille, grille_de_jeu):
-    for ligne in grille:
-        print(ligne)
-    time.sleep(2)
+    """affiche dans la consolle la grille
+        pour plus de lisibilité, espace vide si 0 et X si vivant"""
+
+    for ligne in range(grille_de_jeu.nb_ligne):
+        affiche = ""
+        for colonne in range(grille_de_jeu.nb_colonne):
+            if grille_de_jeu.grille[ligne][colonne] == 0:
+                affiche += " "
+            else:
+                affiche += "X"
+        print(affiche)
+    time.sleep(1)
     choix = input("encore un tour O/n")
     controleur_vie.gestion_demande_nouveau_tour(choix, grille, grille_de_jeu)
 
