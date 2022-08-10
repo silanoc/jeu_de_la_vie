@@ -65,26 +65,19 @@ def menu_principal():
     efface_console()
     affiche = les_ecrans.ecran_menu()
     print(affiche)
-    #choix = input ("rentrer la lettre demandée.\nNouvelle partie aléatoire (N) \nQuitter(Q)")
-    choix_entier = questionary.select("Que voulez-vous faire ?", choices = ['Nouvelle partie aléatoire', 'Quitter']).ask()
-    #choix = ""
-    if choix_entier == "Nouvelle partie aléatoire":
-        choix = 'N'
-    elif choix_entier == "Quitter":
-        choix = 'Q'
+    choix = questionary.select("Que voulez-vous faire ?", choices = ['Nouvelle partie aléatoire', 'Quitter']).ask()
     controleur_vie.gestion_choix_menu_principal(choix)
 
 def nouvelle_partie(grille, grille_de_jeu):
     efface_console()
     affiche = les_ecrans.ecran_debut_partie()
     print(affiche)
-    time.sleep(1)
     affiche_une_grille(grille, grille_de_jeu)
 
 def affiche_une_grille(grille, grille_de_jeu):
     """affiche dans la consolle la grille
         pour plus de lisibilité, espace vide si 0 et X si vivant"""
-
+    efface_console()
     for ligne in range(grille_de_jeu.nb_ligne):
         affiche = ""
         for colonne in range(grille_de_jeu.nb_colonne):
@@ -93,8 +86,7 @@ def affiche_une_grille(grille, grille_de_jeu):
             else:
                 affiche += "X"
         print(affiche)
-    time.sleep(1)
-    #choix = input("encore un tour O/n")
+    print("\n") #pour espacer la grille et l'invite de commande
     choix = questionary.confirm("Encore un tour ?", default = True).ask()
     controleur_vie.gestion_demande_nouveau_tour(choix, grille, grille_de_jeu)
 
