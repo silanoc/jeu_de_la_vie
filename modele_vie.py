@@ -1,13 +1,4 @@
 #-------------------------------------------------------------------------------
-<<<<<<< HEAD:vie.py
-# Name:        Jeu de la vie
-# Purpose:     Démonstrateur simple du jeu de la vie. PAs d'interface utilisateur,
-#              les paramètres sont à définir dans le programme.
-#              sert à tester la logique de base pour une version avec interface.
-#
-# Author:      silanoc
-# Created:     07/08/2022
-=======
 # Name:        modele vie
 # Purpose:     Dans une achitecture MVC, la partie modele du jeu de la vie.
 #              Contient la class Automate, qui est le moteur du jeu.
@@ -15,7 +6,6 @@
 # Author:      silanoc
 #
 # Created:     08/08/2022
->>>>>>> MVC:modele_vie.py
 # Version:     1.0
 #-------------------------------------------------------------------------------
 
@@ -56,11 +46,7 @@ class Automate():
                 elif ligne == 0 and colonne > 0 and colonne < self.nb_colonne -1 :
                     grille_de_calcul[ligne][colonne] = self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne] + self.grille[ligne + 1][colonne + 1]
-<<<<<<< HEAD:vie.py
-                elif ligne == 0 and colonne == self.nb_colonne -1:
-=======
                 elif ligne == 0 and colonne == self.nb_colonne - 1:
->>>>>>> MVC:modele_vie.py
                     grille_de_calcul[ligne][colonne] = self.grille[ligne][colonne - 1] + self.grille[ligne + 1][colonne -1]  + self.grille[ligne + 1][colonne]
                 # toutes les lignes sauf première et dernière
                 elif ligne > 0 and ligne < self.nb_ligne -1 and colonne == 0:
@@ -71,11 +57,7 @@ class Automate():
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne] + self.grille[ligne + 1][colonne + 1]
-<<<<<<< HEAD:vie.py
-                elif ligne > 0 and ligne < self.nb_ligne -1 and colonne == self.nb_colonne -1:
-=======
                 elif ligne > 0 and ligne < self.nb_ligne -1 and colonne == self.nb_colonne - 1:
->>>>>>> MVC:modele_vie.py
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne]
@@ -86,11 +68,7 @@ class Automate():
                 elif ligne == self.nb_ligne -1 and colonne > 0 and colonne < self.nb_colonne -1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
-<<<<<<< HEAD:vie.py
-                elif ligne == self.nb_ligne -1 and colonne == self.nb_colonne -1:
-=======
                 elif ligne == self.nb_ligne -1 and colonne == self.nb_colonne - 1:
->>>>>>> MVC:modele_vie.py
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
         return grille_de_calcul
@@ -111,9 +89,8 @@ class Automate():
                     self.grille[ligne][colonne] = dico_si_vivant[valeurs_des_voisins[ligne][colonne]]
 
     def genere_nouvelle_generation(self):
-        """Pour enchainer deux méthodes, qui correspondent à une action pour le visuel.
+        """Pour enchainer deux méthodes, qui correspondent à une action pour le visuel."""
         valeurs_des_voisins = self.calcul_etat_initial()
-<<<<<<< HEAD:vie.py
         self.donne_etat_final(valeurs_des_voisins)
 
 
@@ -129,6 +106,4 @@ def main(nb_generation = 10):
 
 if __name__ == '__main__':
     main(10)
-=======
-        self.donne_etat_final(valeurs_des_voisins)
->>>>>>> MVC:modele_vie.py
+
