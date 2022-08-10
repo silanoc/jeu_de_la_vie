@@ -1,12 +1,12 @@
 #-------------------------------------------------------------------------------
 # Name:        Jeu de la vie
-# Purpose:
+# Purpose:     Démonstrateur simple du jeu de la vie. PAs d'interface utilisateur,
+#              les paramètres sont à définir dans le programme.
+#              sert à tester la logique de base pour une version avec interface.
 #
-# Author:      Gabriel-le
-#
+# Author:      silanoc
 # Created:     07/08/2022
-# Copyright:   (c) Gabriel-le 2022
-# Licence:     <your licence>
+# Version:     1.0
 #-------------------------------------------------------------------------------
 import random
 
@@ -56,7 +56,7 @@ class Automate():
                 elif ligne == 0 and colonne > 0 and colonne < self.nb_colonne -1 :
                     grille_de_calcul[ligne][colonne] = self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne] + self.grille[ligne + 1][colonne + 1]
-                elif ligne == 0 and colonne == self.nb_colonne:
+                elif ligne == 0 and colonne == self.nb_colonne -1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne][colonne - 1] + self.grille[ligne + 1][colonne -1]  + self.grille[ligne + 1][colonne]
                 # toutes les lignes sauf première et dernière
                 elif ligne > 0 and ligne < self.nb_ligne -1 and colonne == 0:
@@ -67,18 +67,18 @@ class Automate():
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne] + self.grille[ligne + 1][colonne + 1]
-                elif ligne > 0 and ligne < self.nb_ligne -1 and colonne == self.nb_colonne:
+                elif ligne > 0 and ligne < self.nb_ligne -1 and colonne == self.nb_colonne -1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne + 1][colonne - 1] +  self.grille[ligne + 1][colonne]
                 # dernière ligne
-                elif ligne == self.nb_ligne and colonne == 0:
+                elif ligne == self.nb_ligne -1 and colonne == 0:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne + 1]
-                elif ligne == self.nb_ligne and colonne > 0 and colonne < self.nb_colonne -1:
+                elif ligne == self.nb_ligne -1 and colonne > 0 and colonne < self.nb_colonne -1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne] +  self.grille[ligne - 1][colonne + 1]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1] + self.grille[ligne][colonne + 1]
-                elif ligne == self.nb_ligne and colonne == self.nb_colonne:
+                elif ligne == self.nb_ligne -1 and colonne == self.nb_colonne -1:
                     grille_de_calcul[ligne][colonne] = self.grille[ligne - 1][colonne - 1] +  self.grille[ligne - 1][colonne]
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
         return grille_de_calcul
@@ -103,7 +103,7 @@ class Automate():
 
 
 def main(nb_generation = 10):
-    vie = Automate((15, 15))
+    vie = Automate((6, 6))
     print("---generation initiale-------")
     vie.grille = vie.remplissage_aleatoire_a_la_creation()
     vie.affichage_grille()
@@ -113,4 +113,4 @@ def main(nb_generation = 10):
         vie.affichage_grille()
 
 if __name__ == '__main__':
-    main(20)
+    main(3)
