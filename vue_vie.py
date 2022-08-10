@@ -12,6 +12,8 @@ import time
 import sys
 import os
 #---
+import questionary
+#---
 import controleur_vie
 
 class Ecran():
@@ -45,11 +47,11 @@ class Ecran():
 les_ecrans = Ecran()
 
 def efface_console():
-	"""pour nettoyer la console entre chaque vue, et avoir quelque chose de propre"""
-	if sys.platform.startswith("win"): #si windows
-		os.system("cls")
-	else :
-		os.system("clear")
+    """pour nettoyer la console entre chaque vue, et avoir quelque chose de propre"""
+    if sys.platform.startswith("win"): #si windows
+        os.system("cls")
+    else :
+        os.system("clear")
 
 def demarer_jeu():
     """Première fonction appelée au démarage du jeu"""
@@ -63,7 +65,13 @@ def menu_principal():
     efface_console()
     affiche = les_ecrans.ecran_menu()
     print(affiche)
-    choix = input ("rentrer la lettre demandée.\nNouvelle partie aléatoire (N) \nQuitter(Q)")
+    #choix = input ("rentrer la lettre demandée.\nNouvelle partie aléatoire (N) \nQuitter(Q)")
+    choix_entier = questionary.select("Que voulez-vous faire ?", choices = ['Nouvelle partie aléatoire', 'Quitter']).ask()
+    #choix = ""
+    if choix_entier == "Nouvelle partie aléatoire":
+        choix = 'N'
+    elif choix_entier == "Quitter":
+        choix = 'Q'
     controleur_vie.gestion_choix_menu_principal(choix)
 
 def nouvelle_partie(grille, grille_de_jeu):
@@ -86,7 +94,8 @@ def affiche_une_grille(grille, grille_de_jeu):
                 affiche += "X"
         print(affiche)
     time.sleep(1)
-    choix = input("encore un tour O/n")
+    #choix = input("encore un tour O/n")
+    choix = questionary.confirm("Encore un tour ?", default = True).ask()
     controleur_vie.gestion_demande_nouveau_tour(choix, grille, grille_de_jeu)
 
 def quitter():
