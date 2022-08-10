@@ -103,7 +103,7 @@ class Automate():
 
 
 def main(nb_generation = 10):
-    vie = Automate((6, 6))
+    vie = Automate((15, 15))
     print("---generation initiale-------")
     vie.grille = vie.remplissage_aleatoire_a_la_creation()
     vie.affichage_grille()
@@ -113,4 +113,4 @@ def main(nb_generation = 10):
         vie.affichage_grille()
 
 if __name__ == '__main__':
-    main(3)
+    main(10)
