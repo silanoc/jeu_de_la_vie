@@ -10,7 +10,7 @@ Programme exécutant le "jeu de la vie", célébre automate cellulaire.
 Il est developpé avec l'architecture Modèle - Vue - Controleur.
 
 L'interface est la console.
-Dans cette toute première version, il n'y a pas de gestion des erreurs des inputs.
+Les choix sont faits via la librairie questionary.
 
 # Les fichiers :
 - jeu_vie.py : pour démarrer le programme. Seul fichier possédant une structure
