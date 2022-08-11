@@ -5,9 +5,9 @@
 
 # Description 
 Simple démonstrateur du jeu de la vie. 
-Il n'y a pAs d'interface utilisateur.
+Il n'y a pas d'interface utilisateur.
 Les paramètres sont à définir dans le programme.
 Il sert à tester la logique de base pour une version avec interface.
 
 # Dépendance / Requiere
-None
+- pytest
