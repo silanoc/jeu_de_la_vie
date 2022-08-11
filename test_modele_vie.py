@@ -63,4 +63,21 @@ def test_donne_etat_final():
                         [0,0,0,0,1,0],
                         [0,0,0,0,0,0]]
 
+def test_genere_nouvelle_generation():
+    automate = modele_vie.Automate((6,6))
+    automate.grille = [[1,1,0,0,0,0],
+                        [1,1,0,0,0,0],
+                        [0,0,0,0,0,0],
+                        [0,0,0,1,1,1],
+                        [0,0,0,0,0,0],
+                        [1,0,0,0,0,0]]
+    automate.genere_nouvelle_generation()
+    assert automate.grille == [[1,1,0,0,0,0],
+                        [1,1,0,0,0,0],
+                        [0,0,0,0,1,0],
+                        [0,0,0,0,1,0],
+                        [0,0,0,0,1,0],
+                        [0,0,0,0,0,0]]
+
+
 
