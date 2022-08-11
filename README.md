@@ -12,6 +12,12 @@ Il est developpé avec l'architecture Modèle - Vue - Controleur.
 L'interface est la console.
 Les choix sont faits via la librairie questionary.
 
+# Les branches
+- master : la branche valide.
+- demonstrateur : Archive. Juste le fichier avec la classe automate. Première version.
+- version_1_0 : première version aboutie. interface par simple input.
+- questionary : pour passer de input à la bibliothèque questionary.
+- MVC : délété. Pour passer du démonstrateur à une architecture MVC.
 # Les fichiers :
 - jeu_vie.py : pour démarrer le programme. Seul fichier possédant une structure
 ```if __name__ == __main__```
