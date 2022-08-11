@@ -92,18 +92,3 @@ class Automate():
         """Pour enchainer deux méthodes, qui correspondent à une action pour le visuel."""
         valeurs_des_voisins = self.calcul_etat_initial()
         self.donne_etat_final(valeurs_des_voisins)
-
-
-def main(nb_generation = 10):
-    vie = Automate((15, 15))
-    print("---generation initiale-------")
-    vie.grille = vie.remplissage_aleatoire_a_la_creation()
-    vie.affichage_grille()
-    for i in range(1, nb_generation + 1):
-        print(f"---generation {i}-------")
-        vie.genere_nouvelle_generation()
-        vie.affichage_grille()
-
-if __name__ == '__main__':
-    main(10)
-
