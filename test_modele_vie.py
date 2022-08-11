@@ -25,4 +25,42 @@ def test_remplissage_aleatoire_a_la_creation():
     #remplissage = automate.grille
     assert len(remplissage) == 3 and len(remplissage[0]) == 3
 
+def test_calcul_etat_initial():
+    automate = modele_vie.Automate((6,6))
+    automate.grille = [[1,1,0,0,0,0],
+                        [1,1,0,0,0,0],
+                        [0,0,0,0,0,0],
+                        [0,0,0,1,1,1],
+                        [0,0,0,0,0,0],
+                        [1,0,0,0,0,0]]
+    grille_de_calcul = automate.calcul_etat_initial()
+    assert grille_de_calcul == [[3,3,2,0,0,0],
+                                [3,3,2,0,0,0],
+                                [2,2,2,2,3,2],
+                                [0,0,1,1,2,1],
+                                [1,1,1,2,3,2],
+                                [0,1,0,0,0,0]]
+
+def test_donne_etat_final():
+    automate = modele_vie.Automate((6,6))
+    automate.grille = [[1,1,0,0,0,0],
+                        [1,1,0,0,0,0],
+                        [0,0,0,0,0,0],
+                        [0,0,0,1,1,1],
+                        [0,0,0,0,0,0],
+                        [1,0,0,0,0,0]]
+    grille_de_calcul = [[3,3,2,0,0,0],
+                        [3,3,2,0,0,0],
+                        [2,2,2,2,3,2],
+                        [0,0,1,1,2,1],
+                        [1,1,1,2,3,2],
+                        [0,1,0,0,0,0]]
+    automate.donne_etat_final(grille_de_calcul)
+    assert automate.grille == [[1,1,0,0,0,0],
+                        [1,1,0,0,0,0],
+                        [0,0,0,0,1,0],
+                        [0,0,0,0,1,0],
+                        [0,0,0,0,1,0],
+                        [0,0,0,0,0,0]]
+
 
