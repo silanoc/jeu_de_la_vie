@@ -26,8 +26,6 @@ class Automate():
         self.nb_colonne = taille[1]
         self.grille = [["" for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
         self.t_fin_init = time.time()
-        self.t_fin_calcul_etat_initial = 0
-        self.t_debut_calcul_etat_initial = 0
 
     def remplissage_aleatoire_a_la_creation(self):
         """créé et retourne une grille de la même taille que celle initiale, avec des 0 et 1 aléatoire dedans"""
@@ -119,13 +117,11 @@ def main(nb_generation = 10):
     vie.affichage_grille()
     for i in range(1, nb_generation + 1):
         print(f"---generation {i}-------")
-        t =  vie.t_fin_calcul_etat_initial - vie.t_debut_calcul_etat_initial
-        print("temsp calcul etat initial :", t)
         ti = time.time()
         vie.genere_nouvelle_generation()
         tf = time.time()
-        print(tf - ti)
+        print(f"temps calcul d'une génération : {tf - ti}")
         vie.affichage_grille()
 
 if __name__ == '__main__':
-    main(1)
+    main(10)
