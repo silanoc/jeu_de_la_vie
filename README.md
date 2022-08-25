@@ -1,7 +1,7 @@
 # Jeu de la vie
 - Author:      silanoc
 - Created:     08/08/2022
-- Version :    1.0
+- Version :    1.1
 
 # Description
 
