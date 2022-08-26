@@ -1,12 +1,13 @@
 #! /usr/bin/env python3
 # coding: utf-8
 
-"""série de tests pour le fichier modele_vie"""
+"""série de tests pour le fichier jeu_de_la_vie.modele_vie"""
 
 import pytest
 import os
 import jeu_de_la_vie.modele_vie as modele_vie
 
+# Ligne nécessaire pour certaines configurations
 pytest.main(args=['-s', os.path.abspath('test_modele_vie.py')])
 
 class Testmodele_vie():
