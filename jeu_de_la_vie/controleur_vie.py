@@ -27,16 +27,9 @@ def gestion_choix_taille(ligne, colonne):
     grille_de_jeu = creer_une_grille_initale(ligne, colonne)
 
 def gestion_demande_nouveau_tour(choix, grille, grille_de_jeu):
-    if choix == False:
-        vue_vie.menu_principal()
-    elif choix == True:
+    if choix:
         grille_de_jeu.genere_nouvelle_generation()
         grille = grille_de_jeu.grille
         vue_vie.affiche_une_grille(grille, grille_de_jeu)
-
-
-
-
-
-
-
+    else:
+        vue_vie.menu_principal()
