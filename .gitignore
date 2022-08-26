@@ -1,2 +1,3 @@
-venv_vie
-__pychache__
+venv_vie/
+__pychache__/
+.pytest_cache/
