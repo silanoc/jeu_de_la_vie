@@ -14,7 +14,7 @@ import os
 #---
 import questionary
 #---
-import controleur_vie
+import jeu_de_la_vie.controleur_vie as controleur_vie
 
 class Ecran():
     """Classe contenant toutes les zones de textes à afficher.

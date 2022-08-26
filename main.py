@@ -8,7 +8,7 @@
 # Version :    1.1
 #-------------------------------------------------------------------------------
 
-import vue_vie
+import jeu_de_la_vie.vue_vie as vue_vie
 
 if __name__ == '__main__':
     #lance le jeu

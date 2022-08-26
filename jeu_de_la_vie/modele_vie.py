@@ -11,7 +11,7 @@
 
 import random
 #---
-import controleur_vie
+import jeu_de_la_vie.controleur_vie as controleur_vie
 
 class Automate():
     """génére une grille et les règles de bases du jeu"""

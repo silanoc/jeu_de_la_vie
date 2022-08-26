@@ -9,7 +9,7 @@
 
 import pytest
 import os
-import modele_vie
+import jeu_de_la_vie.modele_vie as modele_vie
 
 pytest.main(args=['-s', os.path.abspath('test_modele_vie.py')])
 

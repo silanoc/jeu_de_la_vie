@@ -8,8 +8,8 @@
 # Version :    1.1
 #-------------------------------------------------------------------------------
 
-import vue_vie
-import modele_vie
+import jeu_de_la_vie.vue_vie as vue_vie
+import jeu_de_la_vie.modele_vie as modele_vie
 
 def creer_une_grille_initale(ligne, colonne):
     grille_de_jeu = modele_vie.Automate((ligne,colonne))
