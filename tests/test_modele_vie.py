@@ -1,11 +1,7 @@
-#-------------------------------------------------------------------------------
-# Name:        test_modele_vie
-# Purpose:     série de tests pour le fichier modele_vie
-#
-# Author:      Silanoc
-#
-# Created:     11/08/2022
-#-------------------------------------------------------------------------------
+#! /usr/bin/env python3
+# coding: utf-8
+
+"""série de tests pour le fichier modele_vie"""
 
 import pytest
 import os
