@@ -84,12 +84,12 @@
 Contient la class Automate, qui est le moteur du jeu.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="jeu_de_la_vie.modele_vie.Automate">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.modele_vie.</span></span><span class="sig-name descname"><span class="pre">Automate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taille</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(10,</span> <span class="pre">10)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate" title="Lien permanent vers cette définition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.modele_vie.</span></span><span class="sig-name descname"><span class="pre">Automate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taille</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(10,</span> <span class="pre">10)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Objet de base du jeu.
 Basé autour d’une grille (liste de liste).
 Posséde les méthodes pour se remplir, regarder l’état des cellules voisines et générer le nouvel état.</p>
 <p>initialise le jeu avec une grille de 10 sur 10 par défaut.
-Toutes les cellules sont initialisé avec « « .
+Toutes les cellules sont initialisé avec 99 (valeur absurde).
 Permet d’avoir self.grille d’utilisable comme matrice pour tout le reste.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -98,7 +98,7 @@ Permet d’avoir self.grille d’utilisable comme matrice pour tout le reste.</p
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="jeu_de_la_vie.modele_vie.Automate.calcul_etat_initial">
-<span class="sig-name descname"><span class="pre">calcul_etat_initial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate.calcul_etat_initial" title="Lien permanent vers cette définition"></a></dt>
+<span class="sig-name descname"><span class="pre">calcul_etat_initial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate.calcul_etat_initial" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Pour chaque cellule de self.grille compte le nombre de voisines vivantes.</p>
 <p>Incrémente dans le tableau grille_de_calcul la valeur de l’état de chacune des voisine de self.grille.</p>
 <dl class="field-list simple">
@@ -113,7 +113,7 @@ Permet d’avoir self.grille d’utilisable comme matrice pour tout le reste.</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jeu_de_la_vie.modele_vie.Automate.donne_etat_final">
-<span class="sig-name descname"><span class="pre">donne_etat_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valeurs_des_voisins</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate.donne_etat_final" title="Lien permanent vers cette définition"></a></dt>
+<span class="sig-name descname"><span class="pre">donne_etat_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valeurs_des_voisins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate.donne_etat_final" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>pour chaque cellule de self.grille defini sont nouvel état (0 ou 1).</p>
 <p>Applique les régles du jeu écrites dans les deux dictionnaires.
 Cela permet de simplifier le style et changer les régles si on veut.</p>
@@ -127,14 +127,14 @@ Cela permet de simplifier le style et changer les régles si on veut.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jeu_de_la_vie.modele_vie.Automate.genere_nouvelle_generation">
-<span class="sig-name descname"><span class="pre">genere_nouvelle_generation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate.genere_nouvelle_generation" title="Lien permanent vers cette définition"></a></dt>
+<span class="sig-name descname"><span class="pre">genere_nouvelle_generation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate.genere_nouvelle_generation" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Calcul d’une génération du jeu pour toutes les cellules. Nécessaire pour afficher dans la console.</p>
 <p>Enchaine les deux méthodes afin de calculer le nouvel état de chaque cellule de self.grille</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jeu_de_la_vie.modele_vie.Automate.remplissage_aleatoire_a_la_creation">
-<span class="sig-name descname"><span class="pre">remplissage_aleatoire_a_la_creation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate.remplissage_aleatoire_a_la_creation" title="Lien permanent vers cette définition"></a></dt>
+<span class="sig-name descname"><span class="pre">remplissage_aleatoire_a_la_creation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#jeu_de_la_vie.modele_vie.Automate.remplissage_aleatoire_a_la_creation" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>créé et retourne une grille de la même taille que celle initiale, avec des 0 et 1 aléatoire dedans.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Renvoie</dt>
