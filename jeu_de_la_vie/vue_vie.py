@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 # coding: utf-8
 
-"""dans le modèle MVC le gestionnaire de vue.
+"""Dans le modèle MVC le gestionnaire de vue.
 
-Les choix de l'utilisateur sont fait par la bibliothèque questionary"""
+Les choix de l'utilisateur sont fait par la bibliothèque questionary."""
 
 import time
 import sys
@@ -20,7 +20,7 @@ class Ecran():
     """
 
     def ecran_ouverture_jeu(self) -> str:
-        """Premier affichage à l'ouverture du programme
+        """Premier affichage à l'ouverture du programme.
 
         :returns: affiche 
         :rtype: string
@@ -42,17 +42,17 @@ class Ecran():
         return affiche
 
     def ecran_demande_taille_grille(self) -> str:
-        """Message pour demander la taille voulu pour la grille
+        """Message pour demander la taille voulue pour la grille.
 
         :returns: affiche 
         :rtype: string
         """
-        affiche: str = """Quelle taille voulez-vous pour la grilel de jeu ?
+        affiche: str = """Quelle taille voulez-vous pour la grille de jeu ?
         Merci de rentrer un nombre entier positif à chaque fois."""
         return affiche
 
     def ecran_debut_partie(self) -> str:
-        """Message pour le début de la partie, génération 0
+        """Message pour le début de la partie, génération 0.
 
         :returns: affiche 
         :rtype: string
@@ -75,7 +75,7 @@ les_ecrans: Ecran = Ecran()
 
 
 def efface_console() -> None:
-    """Pour nettoyer la console entre chaque vue, et avoir quelque chose de propre"""
+    """Pour nettoyer la console entre chaque vue, et avoir quelque chose de propre."""
     if sys.platform.startswith("win"): #si windows
         os.system("cls")
     else:
@@ -85,7 +85,7 @@ def efface_console() -> None:
 def demarer_jeu() -> None:
     """Première fonction appelée au démarage du jeu.
 
-    Affiche l'écran d'ouverture puis le menu.
+    Affiche l'écran d'ouverture puis le menu principal.
     """
     efface_console()
     affiche: str = les_ecrans.ecran_ouverture_jeu()
@@ -108,7 +108,7 @@ def menu_principal() -> None:
 
 
 def choix_taille_grille() -> None:
-    """L'utilisateur choisi la taille de la grille de jeu
+    """L'utilisateur choisi la taille de la grille de jeu.
 
     Demande à l'utilisateur deux nombres entiers positifs ligne et colonne.
     Les transmet à la fonction gestion_choix_taille du module controleur_vie.
@@ -138,8 +138,8 @@ def choix_taille_grille() -> None:
 def nouvelle_partie(grille, grille_de_jeu) -> None:
     """Affiche la génération génération 0
 
-    :param list grille: (liste de liste), 0 ou 1 issus de l'instance grille_de_jeu
-    :param grille_de_jeu: l'instance d'Automate
+    :param list grille: (liste de liste), 0 ou 1 issus de l'instance grille_de_jeu.
+    :param grille_de_jeu: l'instance d'Automate.
     """
     efface_console()
     affiche: str = les_ecrans.ecran_debut_partie()
@@ -149,10 +149,10 @@ def nouvelle_partie(grille, grille_de_jeu) -> None:
 
 def affiche_une_grille(grille, grille_de_jeu) -> None:
     """Affiche dans la consolle l'état des cellules.
-    Pour plus de lisibilité, " " si 0/mort et "X" si 1/vivant
+    Pour plus de lisibilité, " " si 0/mort et "X" si 1/vivant.
 
-    :param list grille: (liste de liste), 0 ou 1 issus de l'instance grille_de_jeu
-    :param grille_de_jeu: l'instance d'Automate
+    :param list grille: (liste de liste), 0 ou 1 issus de l'instance grille_de_jeu.
+    :param grille_de_jeu: l'instance d'Automate.
     """
     efface_console()
     for ligne in range(grille_de_jeu.nb_ligne):

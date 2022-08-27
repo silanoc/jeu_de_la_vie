@@ -80,19 +80,19 @@
              
   <section id="module-jeu_de_la_vie.controleur_vie">
 <span id="controleur-vie"></span><h1>controleur_vie<a class="headerlink" href="#module-jeu_de_la_vie.controleur_vie" title="Lien permanent vers cette rubrique"></a></h1>
-<p>dans une architecture MVC, contrôleur du jeu de la vie.</p>
+<p>Dans une architecture MVC, contrôleur du jeu de la vie.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="jeu_de_la_vie.controleur_vie.creer_une_grille_initale">
 <span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.controleur_vie.</span></span><span class="sig-name descname"><span class="pre">creer_une_grille_initale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nb_ligne</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_colonne</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.controleur_vie.creer_une_grille_initale" title="Lien permanent vers cette définition"></a></dt>
-<dd><p>Création d’une grille rempli pour commencer.</p>
-<p>A partir de la classe Automate du module modele_vie, créé une instance grille de jeu.
-Chaque cellule à un état 0 ou 1.
-Dit au module vue_vie d’exécuter la fonction nouvelle partie avec l’instance et ces valeurs</p>
+<dd><p>Création d’une grille remplie pour commencer.</p>
+<p>A partir de la classe Automate du module modele_vie, créé une instance grille_de_jeu.
+Chaque cellule a un état 0 ou 1.</p>
+<p>Dit au module vue_vie d’exécuter la fonction nouvelle_partie avec l’instance et ces valeurs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nb_ligne</strong> (<em>int</em>) – nombre de nb_ligne que l’on souhaite pour la grille</p></li>
-<li><p><strong>nb_colonne</strong> (<em>int</em>) – nombre de nb_colonne que l’on souhaite pour la grille</p></li>
+<li><p><strong>nb_ligne</strong> (<em>int</em>) – nombre de ligne que l’on souhaite pour la grille.</p></li>
+<li><p><strong>nb_colonne</strong> (<em>int</em>) – nombre de colonne que l’on souhaite pour la grille.</p></li>
 </ul>
 </dd>
 </dl>
@@ -101,11 +101,11 @@ Dit au module vue_vie d’exécuter la fonction nouvelle partie avec l’instanc
 <dl class="py function">
 <dt class="sig sig-object py" id="jeu_de_la_vie.controleur_vie.gestion_choix_menu_principal">
 <span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.controleur_vie.</span></span><span class="sig-name descname"><span class="pre">gestion_choix_menu_principal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">choix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.controleur_vie.gestion_choix_menu_principal" title="Lien permanent vers cette définition"></a></dt>
-<dd><p>Appliquer la decision demandé dans vue_vie.menu_principal()</p>
+<dd><p>Appliquer la décision demandée dans vue_vie.menu_principal()</p>
 <p>Selon le choix, demande au module vue_vie d’exécuter une fonction différente.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>choix</strong> (<em>string</em>) – valeur détermnié dans vue_vie.menu_principal()</p>
+<dd class="field-odd"><p><strong>choix</strong> (<em>string</em>) – valeur déterminée dans vue_vie.menu_principal()</p>
 </dd>
 </dl>
 </dd></dl>
@@ -113,8 +113,8 @@ Dit au module vue_vie d’exécuter la fonction nouvelle partie avec l’instanc
 <dl class="py function">
 <dt class="sig sig-object py" id="jeu_de_la_vie.controleur_vie.gestion_demande_nouveau_tour">
 <span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.controleur_vie.</span></span><span class="sig-name descname"><span class="pre">gestion_demande_nouveau_tour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">choix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grille</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grille_de_jeu</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.controleur_vie.gestion_demande_nouveau_tour" title="Lien permanent vers cette définition"></a></dt>
-<dd><p>Appliquer la decision demandé dans vue_vie.affiche_une_grille()</p>
-<p>Selon la décision binaire</p>
+<dd><p>Appliquer la decision demandée dans vue_vie.affiche_une_grille()</p>
+<p>Selon la décision binaire :</p>
 <ul class="simple">
 <li><p>Recalcule un génération dans l’instance grille_de_jeu. Et demande à vue_vie de l’afficher.</p></li>
 <li><p>Demande à vue_vie de revenir au menu principal.</p></li>
@@ -122,7 +122,7 @@ Dit au module vue_vie d’exécuter la fonction nouvelle partie avec l’instanc
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>choix</strong> (<em>bool</em>) – déterminé dans vue_vie.affiche_une_grille()</p></li>
+<li><p><strong>choix</strong> (<em>bool</em>) – déterminée dans vue_vie.affiche_une_grille()</p></li>
 <li><p><strong>grille</strong> (<em>lst</em>) – liste de liste de 0 ou 1 issus de l’instance grille_de_jeu</p></li>
 <li><p><strong>grille_de_jeu</strong> – l’instance d’Automate</p></li>
 </ul>

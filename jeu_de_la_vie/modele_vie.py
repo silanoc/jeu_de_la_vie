@@ -15,11 +15,13 @@ class Automate():
     Basé autour d'une grille (liste de liste).
     Posséde les méthodes pour se remplir, regarder l'état des cellules voisines et générer le nouvel état.
     
-    initialise le jeu avec une grille de 10 sur 10 par défaut.
+    Initialise le jeu avec une grille de 10 sur 10 par défaut.
+    
     Toutes les cellules sont initialisé avec 99 (valeur absurde).
-    Permet d'avoir self.grille d'utilisable comme matrice pour tout le reste.
+    
+    Permet d'avoir self.grille d'utilisable pour tout le reste.
         
-    :param turple taille: définit le nombre de lignes et de colonnes voulues. Par defaut 10 sur 10 (10, 10)
+    :param turple taille: définit le nombre de lignes et de colonnes voulues. Par défaut (10, 10).
     """
 
     def __init__(self, taille: Tuple[int, int] = (10, 10)) -> None:
@@ -30,7 +32,7 @@ class Automate():
         self.grille: list[list[int]] = [[99 for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
 
     def remplissage_aleatoire_a_la_creation(self) -> list[list[int]]:
-        """créé et retourne une grille de la même taille que celle initiale, avec des 0 et 1 aléatoire dedans.
+        """Créé et retourne une grille de la même taille que celle initiale, avec des 0 et 1 aléatoire dedans.
         
         :returns: remplissage (liste de liste) dont toutes les valeurs sont des 0 ou des 1.
         :rtype: list
@@ -41,7 +43,7 @@ class Automate():
     def calcul_etat_initial(self) -> list[list[int]]:
         """Pour chaque cellule de self.grille compte le nombre de voisines vivantes. 
         
-        Incrémente dans le tableau grille_de_calcul la valeur de l'état de chacune des voisine de self.grille.
+        Incrémente dans le tableau grille_de_calcul la valeur de l'état de chacune des 8 voisines de self.grille.
         
         :returns: grille_de_calcul (liste de liste), valeurs allant de 0 à 8.
         :rtype: list
@@ -83,7 +85,7 @@ class Automate():
         return grille_de_calcul
 
     def donne_etat_final(self, valeurs_des_voisins: list[list[int]]) -> None:
-        """pour chaque cellule de self.grille defini sont nouvel état (0 ou 1).
+        """Pour chaque cellule de self.grille defini son nouvel état (0 ou 1).
         
         Applique les régles du jeu écrites dans les deux dictionnaires.
         Cela permet de simplifier le style et changer les régles si on veut.

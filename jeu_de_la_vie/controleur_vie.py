@@ -1,21 +1,22 @@
 #! /usr/bin/env python3
 # coding: utf-8
 
-"""dans une architecture MVC, contrôleur du jeu de la vie."""
+"""Dans une architecture MVC, contrôleur du jeu de la vie."""
 
 import jeu_de_la_vie.vue_vie as vue_vie
 import jeu_de_la_vie.modele_vie as modele_vie
 
 
 def creer_une_grille_initale(nb_ligne: int, nb_colonne: int) -> None:
-    """Création d'une grille rempli pour commencer.
+    """Création d'une grille remplie pour commencer.
 
-    A partir de la classe Automate du module modele_vie, créé une instance grille de jeu.
-    Chaque cellule à un état 0 ou 1.
-    Dit au module vue_vie d'exécuter la fonction nouvelle partie avec l'instance et ces valeurs
+    A partir de la classe Automate du module modele_vie, créé une instance grille_de_jeu.
+    Chaque cellule a un état 0 ou 1.
+    
+    Dit au module vue_vie d'exécuter la fonction nouvelle_partie avec l'instance et ces valeurs.
 
-    :param int nb_ligne: nombre de nb_ligne que l'on souhaite pour la grille
-    :param int nb_colonne: nombre de nb_colonne que l'on souhaite pour la grille
+    :param int nb_ligne: nombre de ligne que l'on souhaite pour la grille.
+    :param int nb_colonne: nombre de colonne que l'on souhaite pour la grille.
     """
     
     grille_de_jeu = modele_vie.Automate((nb_ligne, nb_colonne))
@@ -24,11 +25,11 @@ def creer_une_grille_initale(nb_ligne: int, nb_colonne: int) -> None:
 
 
 def gestion_choix_menu_principal(choix: str) -> None:
-    """Appliquer la decision demandé dans vue_vie.menu_principal()
+    """Appliquer la décision demandée dans vue_vie.menu_principal()
 
     Selon le choix, demande au module vue_vie d'exécuter une fonction différente.
 
-    :param string choix: valeur détermnié dans vue_vie.menu_principal()
+    :param string choix: valeur déterminée dans vue_vie.menu_principal()
     """
     if choix == "Nouvelle partie aléatoire":
         vue_vie.choix_taille_grille()
@@ -42,14 +43,14 @@ def gestion_choix_taille(nb_ligne: int, nb_colonne: int) -> None:
 
 
 def gestion_demande_nouveau_tour(choix: bool, grille, grille_de_jeu) -> None:
-    """Appliquer la decision demandé dans vue_vie.affiche_une_grille()
+    """Appliquer la decision demandée dans vue_vie.affiche_une_grille()
 
-    Selon la décision binaire
+    Selon la décision binaire :
 
     * Recalcule un génération dans l'instance grille_de_jeu. Et demande à vue_vie de l'afficher.
     * Demande à vue_vie de revenir au menu principal.
 
-    :param bool choix: déterminé dans vue_vie.affiche_une_grille()
+    :param bool choix: déterminée dans vue_vie.affiche_une_grille()
     :param  lst grille: liste de liste de 0 ou 1 issus de l'instance grille_de_jeu
     :param grille_de_jeu: l'instance d'Automate
     """
