@@ -6,6 +6,7 @@
 import jeu_de_la_vie.vue_vie as vue_vie
 import jeu_de_la_vie.modele_vie as modele_vie
 
+Grille_type= list[list[int]] 
 
 def creer_une_grille_initale(nb_ligne: int, nb_colonne: int) -> None:
     """Création d'une grille remplie pour commencer.
@@ -20,7 +21,7 @@ def creer_une_grille_initale(nb_ligne: int, nb_colonne: int) -> None:
     """
     
     grille_de_jeu = modele_vie.Automate((nb_ligne, nb_colonne))
-    grille_de_jeu.grille  = grille_de_jeu.remplissage_aleatoire_a_la_creation()
+    grille_de_jeu.grille = grille_de_jeu.remplissage_aleatoire_a_la_creation()
     vue_vie.nouvelle_partie(grille_de_jeu.grille, grille_de_jeu)
 
 

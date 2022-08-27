@@ -6,9 +6,9 @@ Contient la class Automate, qui est le moteur du jeu.
 """
 
 import random
-from typing import Tuple
 import jeu_de_la_vie.controleur_vie as controleur_vie
 
+Grille_type= list[list[int]] 
 
 class Automate():
     """Objet de base du jeu.
@@ -24,20 +24,20 @@ class Automate():
     :param turple taille: définit le nombre de lignes et de colonnes voulues. Par défaut (10, 10).
     """
 
-    def __init__(self, taille: Tuple[int, int] = (10, 10)) -> None:
+    def __init__(self, taille: tuple[int, int] = (10, 10)) -> None:
 
-        self.taille: Tuple[int, int] = taille
+        self.taille: tuple[int, int] = taille
         self.nb_ligne:int = taille[0]
         self.nb_colonne: int = taille[1]
-        self.grille: list[list[int]] = [[99 for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
+        self.grille: Grille_type = [[99 for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
 
-    def remplissage_aleatoire_a_la_creation(self) -> list[list[int]]:
+    def remplissage_aleatoire_a_la_creation(self) -> Grille_type:
         """Créé et retourne une grille de la même taille que celle initiale, avec des 0 et 1 aléatoire dedans.
         
         :returns: remplissage (liste de liste) dont toutes les valeurs sont des 0 ou des 1.
         :rtype: list
         """
-        remplissage: list[list[int]] = [[random.randint(0,1) for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
+        remplissage: Grille_type = [[random.randint(0,1) for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
         return remplissage
 
     def calcul_etat_initial(self) -> list[list[int]]:
@@ -48,7 +48,7 @@ class Automate():
         :returns: grille_de_calcul (liste de liste), valeurs allant de 0 à 8.
         :rtype: list
         """
-        grille_de_calcul: list[list[int]] = [[0 for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
+        grille_de_calcul: Grille_type = [[0 for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
         for ligne in range(self.nb_ligne):
             for colonne in range(self.nb_colonne):
                 # première ligne
@@ -84,7 +84,7 @@ class Automate():
                     grille_de_calcul[ligne][colonne] += self.grille[ligne][colonne - 1]
         return grille_de_calcul
 
-    def donne_etat_final(self, valeurs_des_voisins: list[list[int]]) -> None:
+    def donne_etat_final(self, valeurs_des_voisins: Grille_type) -> None:
         """Pour chaque cellule de self.grille defini son nouvel état (0 ou 1).
         
         Applique les régles du jeu écrites dans les deux dictionnaires.
@@ -110,5 +110,5 @@ class Automate():
         
         Enchaine les deux méthodes afin de calculer le nouvel état de chaque cellule de self.grille  
         """
-        valeurs_des_voisins: list[list[int]] = self.calcul_etat_initial()
+        valeurs_des_voisins: Grille_type = self.calcul_etat_initial()
         self.donne_etat_final(valeurs_des_voisins)

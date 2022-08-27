@@ -9,6 +9,9 @@ import time
 import sys
 import os
 
+Grille_type= list[list[int]] 
+
+
 import questionary
 
 import jeu_de_la_vie.controleur_vie as controleur_vie
@@ -135,7 +138,7 @@ def choix_taille_grille() -> None:
     controleur_vie.gestion_choix_taille(ligne, colonne)
 
 
-def nouvelle_partie(grille, grille_de_jeu) -> None:
+def nouvelle_partie(grille:Grille_type, grille_de_jeu) -> None:
     """Affiche la génération génération 0
 
     :param list grille: (liste de liste), 0 ou 1 issus de l'instance grille_de_jeu.
@@ -147,7 +150,7 @@ def nouvelle_partie(grille, grille_de_jeu) -> None:
     affiche_une_grille(grille, grille_de_jeu)
 
 
-def affiche_une_grille(grille, grille_de_jeu) -> None:
+def affiche_une_grille(grille:Grille_type, grille_de_jeu) -> None:
     """Affiche dans la consolle l'état des cellules.
     Pour plus de lisibilité, " " si 0/mort et "X" si 1/vivant.
 
