@@ -20,6 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="modele_vie" href="modele_vie.html" />
     <link rel="prev" title="Jeu de la Vie" href="intro.html" /> 
 </head>
 
@@ -38,10 +39,19 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Contents :</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Jeu de la Vie</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code :</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">controleur_vie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_vie.html">modele_vie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vue_vie.html">vue_vie</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tests :</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="test_modele_vie.html">test_modele_vie</a></li>
 </ul>
 
         </div>
@@ -78,9 +88,14 @@
 <p>A partir de la classe Automate du module modele_vie, crré une instance grille de jeu.
 Chaque cellule à un état 0 ou 1.
 Dit au module vue_vie d’exécuter la fonction nouvelle partie avec l’instance et ces valeurs</p>
-<p>arg :
-- ligne (int) : nombre de ligne que l’on souhaite pour la grille
-- colonne (int) : nombre de colonne que l’on souhaite pour la grille</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ligne</strong> (<em>int</em>) – nombre de ligne que l’on souhaite pour la grille</p></li>
+<li><p><strong>colonne</strong> (<em>int</em>) – nombre de colonne que l’on souhaite pour la grille</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -88,8 +103,11 @@ Dit au module vue_vie d’exécuter la fonction nouvelle partie avec l’instanc
 <span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.controleur_vie.</span></span><span class="sig-name descname"><span class="pre">gestion_choix_menu_principal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">choix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.controleur_vie.gestion_choix_menu_principal" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Appliquer la decision demandé dans vue_vie.menu_principal()</p>
 <p>Selon le choix, demande au module vue_vie d’exécuter une fonction différente.</p>
-<p>arg:
-- choix (string) : valeur détermnié dans vue_vie.menu_principal()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>choix</strong> (<em>string</em>) – valeur détermnié dans vue_vie.menu_principal()</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -97,13 +115,18 @@ Dit au module vue_vie d’exécuter la fonction nouvelle partie avec l’instanc
 <span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.controleur_vie.</span></span><span class="sig-name descname"><span class="pre">gestion_demande_nouveau_tour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">choix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grille</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grille_de_jeu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.controleur_vie.gestion_demande_nouveau_tour" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Appliquer la decision demandé dans vue_vie.affiche_une_grille()</p>
 <p>Selon la décision binaire
-- recalcule un génération dans l’instance grille_de_jeu. 
+* recalcule un génération dans l’instance grille_de_jeu. 
 Et demande à vue_vie de l’afficher.
-- Demande à vue_vie de revenir au menu principal.</p>
-<p>arg:
-- choix (boolean) : déterminé dans vue_vie.affiche_une_grille()
-- grille (liste de liste) : 0 ou 1 issus de l’instance grille_de_jeu
-- grille_de_jeu (objet) : l’instance d’Automate</p>
+* Demande à vue_vie de revenir au menu principal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>choix</strong> (<em>bool</em>) – déterminé dans vue_vie.affiche_une_grille()</p></li>
+<li><p><strong>grille</strong> (<em>lst</em>) – liste de liste de 0 ou 1 issus de l’instance grille_de_jeu</p></li>
+<li><p><strong>grille_de_jeu</strong> – l’instance d’Automate</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -113,6 +136,7 @@ Et demande à vue_vie de l’afficher.
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="intro.html" class="btn btn-neutral float-left" title="Jeu de la Vie" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="modele_vie.html" class="btn btn-neutral float-right" title="modele_vie" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -13,27 +13,26 @@ class Automate():
     """Objet de base du jeu.
     Basé autour d'une grille (liste de liste).
     Posséde les méthodes pour se remplir, regarder l'état des cellules voisines et générer le nouvel état.
+    
+    initialise le jeu avec une grille de 10 sur 10 par défaut.
+    Toutes les cellules sont initialisé avec "".
+    Permet d'avoir self.grille d'utilisable comme matrice pour tout le reste.
+        
+    :param turple taille: définit le nombre de lignes et de colonnes voulues. Par defaut 10 sur 10 (10, 10)
     """
 
     def __init__(self, taille = (10, 10)):
-        """initialise le jeu avec une grille de 10 sur 10 par défaut.
-        Toutes les cellules sont initialisé avec 
-        Permet d'avoir self.grille d'utilisable comme matrice pour tout le reste.
-        
-        arg :
-        - taille (turple) : définit le nombre de lignes et de colonnes voulues.
-            par defaut 10 sur 10 (10, 10)
-        """
+
         self.taille = taille
         self.nb_ligne = taille[0]
         self.nb_colonne = taille[1]
         self.grille = [["" for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
 
     def remplissage_aleatoire_a_la_creation(self):
-        """créé et retourne une grille de la même taille que celle initiale, avec des 0 et 1 aléatoire dedans
+        """créé et retourne une grille de la même taille que celle initiale, avec des 0 et 1 aléatoire dedans.
         
-        return :
-        - remplissage (liste de liste) : toutes les valaurs sont des 0 ou des 1.
+        :returns: remplissage (liste de liste) dont toutes les valeurs sont des 0 ou des 1.
+        :rtype: list
         """
         remplissage = [[random.randint(0,1) for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
         return remplissage
@@ -43,8 +42,8 @@ class Automate():
         
         Incrémente dans le tableau grille_de_calcul la valeur de l'état de chacune des voisine de self.grille.
         
-        return :
-        - grille_de_calcul (liste de liste) : valeurs allant de 0 à 8
+        :returns: grille_de_calcul (liste de liste), valeurs allant de 0 à 8.
+        :rtype: list
         """
         grille_de_calcul = [["" for i in range(self.nb_colonne)] for j in range(self.nb_ligne)]
         for ligne in range(self.nb_ligne):
@@ -90,8 +89,7 @@ class Automate():
         
         Ecrit directement dans la self.grille le nouvel état.
         
-        arg :
-        - valeurs_des_voisines (liste_de_liste) : valeurs entre 0 et 8, calculé dans calcul_etat_initial().
+        :param list valeurs_des_voisines: (liste_de_liste), valeurs entre 0 et 8, calculées dans calcul_etat_initial().
         """
 
         dico_si_vivant = {0 : 0, 1 : 0, 2 : 1, 3 : 1, 4 : 0, 5 : 0, 6 : 0, 7 : 0, 8 : 0, 9 : 0}

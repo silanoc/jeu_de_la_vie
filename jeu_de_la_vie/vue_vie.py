@@ -22,8 +22,8 @@ class Ecran():
     def ecran_ouverture_jeu(self):
         """Premier affichage à l'ouverture du programme
 
-        return:
-        - affiche (string)
+        :returns: affiche 
+        :rtype: string
         """
         affiche = """Bienvenu sur mon programme
 
@@ -34,8 +34,9 @@ class Ecran():
 
     def ecran_menu(self):
         """Message pour le menu principal.
-        return:
-        - affiche (string)
+
+        :returns: affiche 
+        :rtype: string
         """
         affiche = "Vous avez plusieurs choix"
         return affiche
@@ -43,8 +44,8 @@ class Ecran():
     def ecran_demande_taille_grille(self):
         """Message pour demander la taille voulu pour la grille
 
-        return:
-        - affiche (string)
+        :returns: affiche 
+        :rtype: string
         """
         affiche = """Quelle taille voulez-vous pour la grilel de jeu ?
         Merci de rentrer un nombre entier positif à chaque fois."""
@@ -53,8 +54,8 @@ class Ecran():
     def ecran_debut_partie(self):
         """Message pour le début de la partie, génération 0
 
-        return:
-        - affiche (string)
+        :returns: affiche 
+        :rtype: string
         """
         affiche = "partie en cours"
         return affiche
@@ -62,8 +63,8 @@ class Ecran():
     def ecran_quitter(self):
         """Dernier affichage visible par l'utilisateur.
 
-        return:
-        - affiche (string)
+        :returns: affiche 
+        :rtype: string
         """
         affiche = "Merci d'avoir utilisé ce programme. A une prochaine occasion."
         return affiche
@@ -137,9 +138,8 @@ def choix_taille_grille():
 def nouvelle_partie(grille, grille_de_jeu):
     """Affiche la génération génération 0
 
-    arg :
-    - grille (liste de liste) : 0 ou 1 issus de l'instance grille_de_jeu
-    - grille_de_jeu (objet) : l'instance d'Automate
+    :param list grille: (liste de liste), 0 ou 1 issus de l'instance grille_de_jeu
+    :param grille_de_jeu: l'instance d'Automate
     """
     efface_console()
     affiche = les_ecrans.ecran_debut_partie()
@@ -151,8 +151,8 @@ def affiche_une_grille(grille, grille_de_jeu):
     """Affiche dans la consolle l'état des cellules.
     Pour plus de lisibilité, " " si 0/mort et "X" si 1/vivant
 
-    - grille (liste de liste) : 0 ou 1 issus de l'instance grille_de_jeu
-    - grille_de_jeu (objet) : l'instance d'Automate
+    :param list grille: (liste de liste), 0 ou 1 issus de l'instance grille_de_jeu
+    :param grille_de_jeu: l'instance d'Automate
     """
     efface_console()
     for ligne in range(grille_de_jeu.nb_ligne):

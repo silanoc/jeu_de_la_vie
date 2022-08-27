@@ -8,13 +8,13 @@ Welcome to Jeu de la vie's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents :
 
    ./intro.rst
 
 .. toctree::
    :maxdepth: 2
-   :caption: Code:
+   :caption: Code :
 
    ./controleur_vie.rst
    ./modele_vie.rst
@@ -22,8 +22,8 @@ Welcome to Jeu de la vie's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Tests:
-   
+   :caption: Tests :
+
    ./test_modele_vie.rst
 
 Indices and tables

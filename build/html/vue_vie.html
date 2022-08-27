@@ -39,12 +39,18 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Contents :</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Jeu de la Vie</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code :</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="controleur_vie.html">controleur_vie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_vie.html">modele_vie</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">vue_vie</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tests :</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="test_modele_vie.html">test_modele_vie</a></li>
 </ul>
 
@@ -85,40 +91,70 @@ Permet d’alléger les fonctions de ce fichier vue_vie.</p>
 <dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_debut_partie">
 <span class="sig-name descname"><span class="pre">ecran_debut_partie</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_debut_partie" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Message pour le début de la partie, génération 0</p>
-<p>return:
-- affiche (string)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_demande_taille_grille">
 <span class="sig-name descname"><span class="pre">ecran_demande_taille_grille</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_demande_taille_grille" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Message pour demander la taille voulu pour la grille</p>
-<p>return:
-- affiche (string)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_menu">
 <span class="sig-name descname"><span class="pre">ecran_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_menu" title="Lien permanent vers cette définition"></a></dt>
-<dd><p>Message pour le menu principal.
-return:
-- affiche (string)</p>
+<dd><p>Message pour le menu principal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_ouverture_jeu">
 <span class="sig-name descname"><span class="pre">ecran_ouverture_jeu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_ouverture_jeu" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Premier affichage à l’ouverture du programme</p>
-<p>return:
-- affiche (string)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_quitter">
 <span class="sig-name descname"><span class="pre">ecran_quitter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_quitter" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Dernier affichage visible par l’utilisateur.</p>
-<p>return:
-- affiche (string)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -128,10 +164,14 @@ return:
 <span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">affiche_une_grille</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grille</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grille_de_jeu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.affiche_une_grille" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Affiche dans la consolle l’état des cellules.
 Pour plus de lisibilité,  »  » si 0/mort et « X » si 1/vivant</p>
-<ul class="simple">
-<li><p>grille (liste de liste) : 0 ou 1 issus de l’instance grille_de_jeu</p></li>
-<li><p>grille_de_jeu (objet) : l’instance d’Automate</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grille</strong> (<em>list</em>) – (liste de liste), 0 ou 1 issus de l’instance grille_de_jeu</p></li>
+<li><p><strong>grille_de_jeu</strong> – l’instance d’Automate</p></li>
 </ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -167,9 +207,14 @@ Transmet se choix (string) à la fonction gestion_choix_menu_principal du module
 <dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.nouvelle_partie">
 <span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">nouvelle_partie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grille</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grille_de_jeu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.nouvelle_partie" title="Lien permanent vers cette définition"></a></dt>
 <dd><p>Affiche la génération génération 0</p>
-<p>arg :
-- grille (liste de liste) : 0 ou 1 issus de l’instance grille_de_jeu
-- grille_de_jeu (objet) : l’instance d’Automate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grille</strong> (<em>list</em>) – (liste de liste), 0 ou 1 issus de l’instance grille_de_jeu</p></li>
+<li><p><strong>grille_de_jeu</strong> – l’instance d’Automate</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">

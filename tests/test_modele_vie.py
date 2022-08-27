@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # coding: utf-8
 
-"""série de tests pour le fichier jeu_de_la_vie.modele_vie"""
+"""Série de tests pour le fichier jeu_de_la_vie.modele_vie"""
 
 import pytest
 import os
@@ -11,18 +11,24 @@ import jeu_de_la_vie.modele_vie as modele_vie
 pytest.main(args=['-s', os.path.abspath('test_modele_vie.py')])
 
 class Testmodele_vie():
+    """Objet contenant tous les tests."""
 
     def test_creation_automate(self):
+        """Vérifie l'existance de la classe automate, et son __init__. 
+        Vérifie qu'il génére bien une liste de liste contenant " "."""
         automate = modele_vie.Automate((3,3))
         assert automate.grille == [["", "", ""], ["", "", ""], ["", "", ""]]
 
     def test_remplissage_aleatoire_a_la_creation(self):
+        """Test la méthode automate.remplissage_aleatoire_a_la_creation()."""
         automate = modele_vie.Automate((3,3))
         remplissage = automate.remplissage_aleatoire_a_la_creation()
         #remplissage = automate.grille
         assert len(remplissage) == 3 and len(remplissage[0]) == 3
 
     def test_calcul_etat_initial(self):
+        """Test la methode automate.calcul_etat_initial().
+        Une grille de 0 et 1 est donné, une grille de valeurs entre 0 à 8 doit être générée."""
         automate = modele_vie.Automate((6,6))
         automate.grille = [[1,1,0,0,0,0],
                             [1,1,0,0,0,0],
@@ -39,6 +45,9 @@ class Testmodele_vie():
                                     [0,1,0,0,0,0]]
 
     def test_donne_etat_final(self):
+        """Test la méthode  automate.donne_etat_final.
+        Une grille de valeur initale et de nombre de voisne est donnée.
+        Doit générer une grilel de 0 et 1."""
         automate = modele_vie.Automate((6,6))
         automate.grille = [[1,1,0,0,0,0],
                             [1,1,0,0,0,0],
@@ -61,6 +70,8 @@ class Testmodele_vie():
                             [0,0,0,0,0,0]]
 
     def test_genere_nouvelle_generation(self):
+        """Test la méthode automate.genere_nouvelle_generation().
+        Une grille de 0 et 1 est donnée, une nouvelel grille doit être calculée."""
         automate = modele_vie.Automate((6,6))
         automate.grille = [[1,1,0,0,0,0],
                             [1,1,0,0,0,0],

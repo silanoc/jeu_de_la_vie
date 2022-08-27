@@ -14,9 +14,8 @@ def creer_une_grille_initale(ligne, colonne):
     Chaque cellule à un état 0 ou 1.
     Dit au module vue_vie d'exécuter la fonction nouvelle partie avec l'instance et ces valeurs
 
-    arg :
-    - ligne (int) : nombre de ligne que l'on souhaite pour la grille
-    - colonne (int) : nombre de colonne que l'on souhaite pour la grille
+    :param int ligne: nombre de ligne que l'on souhaite pour la grille
+    :param int colonne: nombre de colonne que l'on souhaite pour la grille
     """
     grille_de_jeu = modele_vie.Automate((ligne, colonne))
     grille_de_jeu.grille = grille_de_jeu.remplissage_aleatoire_a_la_creation()
@@ -28,8 +27,7 @@ def gestion_choix_menu_principal(choix):
 
     Selon le choix, demande au module vue_vie d'exécuter une fonction différente.
 
-    arg:
-    - choix (string) : valeur détermnié dans vue_vie.menu_principal()
+    :param string choix: valeur détermnié dans vue_vie.menu_principal()
     """
     if choix == "Nouvelle partie aléatoire":
         vue_vie.choix_taille_grille()
@@ -46,14 +44,13 @@ def gestion_demande_nouveau_tour(choix, grille, grille_de_jeu):
     """Appliquer la decision demandé dans vue_vie.affiche_une_grille()
 
     Selon la décision binaire
-    - recalcule un génération dans l'instance grille_de_jeu. 
+    * recalcule un génération dans l'instance grille_de_jeu. 
     Et demande à vue_vie de l'afficher.
-    - Demande à vue_vie de revenir au menu principal.
+    * Demande à vue_vie de revenir au menu principal.
 
-    arg:
-    - choix (boolean) : déterminé dans vue_vie.affiche_une_grille()
-    - grille (liste de liste) : 0 ou 1 issus de l'instance grille_de_jeu
-    - grille_de_jeu (objet) : l'instance d'Automate
+    :param bool choix: déterminé dans vue_vie.affiche_une_grille()
+    :param  lst grille: liste de liste de 0 ou 1 issus de l'instance grille_de_jeu
+    :param grille_de_jeu: l'instance d'Automate
     """
     if choix:
         grille_de_jeu.genere_nouvelle_generation()
