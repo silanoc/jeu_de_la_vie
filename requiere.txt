@@ -1,2 +1,0 @@
-questionary==1.10.0pytest==7.1.2  
- 

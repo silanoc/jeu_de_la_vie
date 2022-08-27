@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vue_vie &mdash; Documentation Jeu de la vie 1.2</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="test_modele_vie" href="test_modele_vie.html" />
+    <link rel="prev" title="modele_vie" href="modele_vie.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Jeu de la vie
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents :</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Jeu de la Vie</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code :</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="controleur_vie.html">controleur_vie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_vie.html">modele_vie</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vue_vie</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tests :</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="test_modele_vie.html">test_modele_vie</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Jeu de la vie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>vue_vie</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/vue_vie.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-jeu_de_la_vie.vue_vie">
+<span id="vue-vie"></span><h1>vue_vie<a class="headerlink" href="#module-jeu_de_la_vie.vue_vie" title="Lien permanent vers cette rubrique"></a></h1>
+<p>Dans le modèle MVC le gestionnaire de vue.</p>
+<p>Les choix de l’utilisateur sont fait par la bibliothèque questionary.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">Ecran</span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Classe contenant toutes les zones de textes à afficher.
+Permet d’alléger les fonctions de ce fichier vue_vie.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_debut_partie">
+<span class="sig-name descname"><span class="pre">ecran_debut_partie</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_debut_partie" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Message pour le début de la partie, génération 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_demande_taille_grille">
+<span class="sig-name descname"><span class="pre">ecran_demande_taille_grille</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_demande_taille_grille" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Message pour demander la taille voulue pour la grille.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_menu">
+<span class="sig-name descname"><span class="pre">ecran_menu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_menu" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Message pour le menu principal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_ouverture_jeu">
+<span class="sig-name descname"><span class="pre">ecran_ouverture_jeu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_ouverture_jeu" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Premier affichage à l’ouverture du programme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.Ecran.ecran_quitter">
+<span class="sig-name descname"><span class="pre">ecran_quitter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.Ecran.ecran_quitter" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Dernier affichage visible par l’utilisateur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>affiche</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.affiche_une_grille">
+<span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">affiche_une_grille</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grille_de_jeu</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.affiche_une_grille" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Affiche dans la consolle l’état des cellules.
+Pour plus de lisibilité,  »  » si 0/mort et « X » si 1/vivant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grille</strong> (<em>list</em>) – (liste de liste), 0 ou 1 issus de l’instance grille_de_jeu.</p></li>
+<li><p><strong>grille_de_jeu</strong> – l’instance d’Automate.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.choix_taille_grille">
+<span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">choix_taille_grille</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.choix_taille_grille" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>L’utilisateur choisi la taille de la grille de jeu.</p>
+<p>Demande à l’utilisateur deux nombres entiers positifs ligne et colonne.
+Les transmet à la fonction gestion_choix_taille du module controleur_vie.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.demarer_jeu">
+<span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">demarer_jeu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.demarer_jeu" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Première fonction appelée au démarage du jeu.</p>
+<p>Affiche l’écran d’ouverture puis le menu principal.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.efface_console">
+<span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">efface_console</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.efface_console" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Pour nettoyer la console entre chaque vue, et avoir quelque chose de propre.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.menu_principal">
+<span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">menu_principal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.menu_principal" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Menu principal.</p>
+<p>Demande un choix à l’utilisateur (commencer une nouvelle partie ou quitter).
+Transmet ce choix (string) à la fonction gestion_choix_menu_principal du module controleur_vie.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.nouvelle_partie">
+<span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">nouvelle_partie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grille_de_jeu</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.nouvelle_partie" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Affiche la génération génération 0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grille</strong> (<em>list</em>) – (liste de liste), 0 ou 1 issus de l’instance grille_de_jeu.</p></li>
+<li><p><strong>grille_de_jeu</strong> – l’instance d’Automate.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jeu_de_la_vie.vue_vie.quitter">
+<span class="sig-prename descclassname"><span class="pre">jeu_de_la_vie.vue_vie.</span></span><span class="sig-name descname"><span class="pre">quitter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#jeu_de_la_vie.vue_vie.quitter" title="Lien permanent vers cette définition"></a></dt>
+<dd><p>Affiche le message final et quitte le programme.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="modele_vie.html" class="btn btn-neutral float-left" title="modele_vie" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="test_modele_vie.html" class="btn btn-neutral float-right" title="test_modele_vie" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Silanoc.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

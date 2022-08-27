@@ -1,2 +1,10 @@
-venv_vie
-__pychache__
+__pycache__/
+.pytest_cache/
+tests/__pycache__/
+venv_vie/
+
+#sphinx
+make.bat
+Makefile
+build/doctrees
+source/
