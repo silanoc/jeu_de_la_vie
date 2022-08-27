@@ -138,7 +138,7 @@ def choix_taille_grille() -> None:
     controleur_vie.gestion_choix_taille(ligne, colonne)
 
 
-def nouvelle_partie(grille:Grille_type, grille_de_jeu) -> None:
+def nouvelle_partie(grille_de_jeu) -> None:
     """Affiche la génération génération 0
 
     :param list grille: (liste de liste), 0 ou 1 issus de l'instance grille_de_jeu.
@@ -147,10 +147,10 @@ def nouvelle_partie(grille:Grille_type, grille_de_jeu) -> None:
     efface_console()
     affiche: str = les_ecrans.ecran_debut_partie()
     print(affiche)
-    affiche_une_grille(grille, grille_de_jeu)
+    affiche_une_grille(grille_de_jeu)
 
 
-def affiche_une_grille(grille:Grille_type, grille_de_jeu) -> None:
+def affiche_une_grille(grille_de_jeu) -> None:
     """Affiche dans la consolle l'état des cellules.
     Pour plus de lisibilité, " " si 0/mort et "X" si 1/vivant.
 
@@ -168,7 +168,7 @@ def affiche_une_grille(grille:Grille_type, grille_de_jeu) -> None:
         print(affiche)
     print("\n") #pour espacer la grille et l'invite de commande
     choix: bool = questionary.confirm("Encore un tour ?", default = True).ask()
-    controleur_vie.gestion_demande_nouveau_tour(choix, grille, grille_de_jeu)
+    controleur_vie.gestion_demande_nouveau_tour(choix, grille_de_jeu)
 
 
 def quitter() -> None:
