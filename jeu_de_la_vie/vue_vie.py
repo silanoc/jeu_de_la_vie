@@ -19,62 +19,62 @@ class Ecran():
     Permet d'alléger les fonctions de ce fichier vue_vie.
     """
 
-    def ecran_ouverture_jeu(self):
+    def ecran_ouverture_jeu(self) -> str:
         """Premier affichage à l'ouverture du programme
 
         :returns: affiche 
         :rtype: string
         """
-        affiche = """Bienvenu sur mon programme
+        affiche: str = """Bienvenu sur mon programme
 
         Jeu de la vie
 
         by Silanoc - août 2022"""
         return affiche
 
-    def ecran_menu(self):
+    def ecran_menu(self)-> str:
         """Message pour le menu principal.
 
         :returns: affiche 
         :rtype: string
         """
-        affiche = "Vous avez plusieurs choix"
+        affiche: str = "Vous avez plusieurs choix"
         return affiche
 
-    def ecran_demande_taille_grille(self):
+    def ecran_demande_taille_grille(self) -> str:
         """Message pour demander la taille voulu pour la grille
 
         :returns: affiche 
         :rtype: string
         """
-        affiche = """Quelle taille voulez-vous pour la grilel de jeu ?
+        affiche: str = """Quelle taille voulez-vous pour la grilel de jeu ?
         Merci de rentrer un nombre entier positif à chaque fois."""
         return affiche
 
-    def ecran_debut_partie(self):
+    def ecran_debut_partie(self) -> str:
         """Message pour le début de la partie, génération 0
 
         :returns: affiche 
         :rtype: string
         """
-        affiche = "partie en cours"
+        affiche: str = "partie en cours"
         return affiche
 
-    def ecran_quitter(self):
+    def ecran_quitter(self) -> str:
         """Dernier affichage visible par l'utilisateur.
 
         :returns: affiche 
         :rtype: string
         """
-        affiche = "Merci d'avoir utilisé ce programme. A une prochaine occasion."
+        affiche: str = "Merci d'avoir utilisé ce programme. A une prochaine occasion."
         return affiche
 
 
 # instantiation de l'objet écran.
-les_ecrans = Ecran()
+les_ecrans: Ecran = Ecran()
 
 
-def efface_console():
+def efface_console() -> None:
     """Pour nettoyer la console entre chaque vue, et avoir quelque chose de propre"""
     if sys.platform.startswith("win"): #si windows
         os.system("cls")
@@ -82,72 +82,72 @@ def efface_console():
         os.system("clear")
 
 
-def demarer_jeu():
+def demarer_jeu() -> None:
     """Première fonction appelée au démarage du jeu.
 
     Affiche l'écran d'ouverture puis le menu.
     """
     efface_console()
-    affiche = les_ecrans.ecran_ouverture_jeu()
+    affiche: str = les_ecrans.ecran_ouverture_jeu()
     print(affiche)
     time.sleep(1)
     menu_principal()
 
 
-def menu_principal():
+def menu_principal() -> None:
     """Menu principal.
 
     Demande un choix à l'utilisateur (commencer une nouvelle partie ou quitter).
-    Transmet se choix (string) à la fonction gestion_choix_menu_principal du module controleur_vie.
+    Transmet ce choix (string) à la fonction gestion_choix_menu_principal du module controleur_vie.
     """
     efface_console()
-    affiche = les_ecrans.ecran_menu()
+    affiche: str = les_ecrans.ecran_menu()
     print(affiche)
-    choix = questionary.select("Que voulez-vous faire ?", choices = ['Nouvelle partie aléatoire', 'Quitter']).ask()
+    choix: str = questionary.select("Que voulez-vous faire ?", choices = ['Nouvelle partie aléatoire', 'Quitter']).ask()
     controleur_vie.gestion_choix_menu_principal(choix)
 
 
-def choix_taille_grille():
+def choix_taille_grille() -> None:
     """L'utilisateur choisi la taille de la grille de jeu
 
     Demande à l'utilisateur deux nombres entiers positifs ligne et colonne.
     Les transmet à la fonction gestion_choix_taille du module controleur_vie.
     """
     efface_console()
-    affiche = les_ecrans.ecran_demande_taille_grille()
+    affiche: str = les_ecrans.ecran_demande_taille_grille()
     print(affiche)
-    ok = False
+    ok: bool = False
     while  ok is False or ligne < 0 :
-        ligne = questionary.text("nombre de ligne").ask()
+        ligne: int = questionary.text("nombre de ligne").ask()
         try:
-            ligne = int(ligne)
-            ok = True
+            ligne: int = int(ligne)
+            ok: bool = True
         except:
-            ok = False
-    ok = False
+            ok: bool = False
+    ok: bool = False
     while ok is False or colonne < 0:
-        colonne = questionary.text("nombre de colonne").ask()
+        colonne:int = questionary.text("nombre de colonne").ask()
         try:
-            colonne = int(colonne)
-            ok = True
+            colonne: int = int(colonne)
+            ok: bool = True
         except:
-            ok = False
+            ok: bool = False
     controleur_vie.gestion_choix_taille(ligne, colonne)
 
 
-def nouvelle_partie(grille, grille_de_jeu):
+def nouvelle_partie(grille, grille_de_jeu) -> None:
     """Affiche la génération génération 0
 
     :param list grille: (liste de liste), 0 ou 1 issus de l'instance grille_de_jeu
     :param grille_de_jeu: l'instance d'Automate
     """
     efface_console()
-    affiche = les_ecrans.ecran_debut_partie()
+    affiche: str = les_ecrans.ecran_debut_partie()
     print(affiche)
     affiche_une_grille(grille, grille_de_jeu)
 
 
-def affiche_une_grille(grille, grille_de_jeu):
+def affiche_une_grille(grille, grille_de_jeu) -> None:
     """Affiche dans la consolle l'état des cellules.
     Pour plus de lisibilité, " " si 0/mort et "X" si 1/vivant
 
@@ -156,7 +156,7 @@ def affiche_une_grille(grille, grille_de_jeu):
     """
     efface_console()
     for ligne in range(grille_de_jeu.nb_ligne):
-        affiche = ""
+        affiche:str = ""
         for colonne in range(grille_de_jeu.nb_colonne):
             if grille_de_jeu.grille[ligne][colonne] == 0:
                 affiche += " "
@@ -164,11 +164,11 @@ def affiche_une_grille(grille, grille_de_jeu):
                 affiche += "X"
         print(affiche)
     print("\n") #pour espacer la grille et l'invite de commande
-    choix = questionary.confirm("Encore un tour ?", default = True).ask()
+    choix: bool = questionary.confirm("Encore un tour ?", default = True).ask()
     controleur_vie.gestion_demande_nouveau_tour(choix, grille, grille_de_jeu)
 
 
-def quitter():
+def quitter() -> None:
     """Affiche le message final et quitte le programme."""
     efface_console()
     affiche = les_ecrans.ecran_quitter()
