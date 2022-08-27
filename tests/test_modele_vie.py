@@ -15,9 +15,9 @@ class Testmodele_vie():
 
     def test_creation_automate(self):
         """Vérifie l'existance de la classe automate, et son __init__. 
-        Vérifie qu'il génére bien une liste de liste contenant " "."""
+        Vérifie qu'il génére bien une liste de liste contenant 99."""
         automate = modele_vie.Automate((3,3))
-        assert automate.grille == [["", "", ""], ["", "", ""], ["", "", ""]]
+        assert automate.grille == [[99, 99, 99], [99, 99, 99], [99, 99, 99]]
 
     def test_remplissage_aleatoire_a_la_creation(self):
         """Test la méthode automate.remplissage_aleatoire_a_la_creation()."""
