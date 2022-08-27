@@ -44,8 +44,8 @@ def gestion_demande_nouveau_tour(choix, grille, grille_de_jeu):
     """Appliquer la decision demandé dans vue_vie.affiche_une_grille()
 
     Selon la décision binaire
-    * recalcule un génération dans l'instance grille_de_jeu. 
-    Et demande à vue_vie de l'afficher.
+
+    * Recalcule un génération dans l'instance grille_de_jeu. Et demande à vue_vie de l'afficher.
     * Demande à vue_vie de revenir au menu principal.
 
     :param bool choix: déterminé dans vue_vie.affiche_une_grille()
