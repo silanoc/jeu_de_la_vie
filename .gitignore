@@ -6,5 +6,5 @@ venv_vie/
 #sphinx
 make.bat
 Makefile
-build/
+build/doctrees
 source/
