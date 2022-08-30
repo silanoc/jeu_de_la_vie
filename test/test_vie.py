@@ -9,7 +9,7 @@
 
 import pytest
 import os
-import vie
+import vie.vie as vie
 
 pytest.main(args=['-s', os.path.abspath('test_vie.py')])
 
