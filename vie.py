@@ -108,18 +108,18 @@ class Automate():
         self.tf = time.time()
 
 
-def main(nb_generation = 10):
+def main(nb_generation = 10) -> None:
     vie = Automate((15, 15))
-    t = vie.t_fin_init - vie.t_debut_init
+    t: float = vie.t_fin_init - vie.t_debut_init
     print("temps initialisation : ",t)
     print("---generation initiale-------")
     vie.grille = vie.remplissage_aleatoire_a_la_creation()
     vie.affichage_grille()
     for i in range(1, nb_generation + 1):
         print(f"---generation {i}-------")
-        ti = time.time()
+        ti: float = time.time()
         vie.genere_nouvelle_generation()
-        tf = time.time()
+        tf: float = time.time()
         print(f"temps calcul d'une génération : {tf - ti}")
         vie.affichage_grille()
 
