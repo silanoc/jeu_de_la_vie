@@ -4,7 +4,7 @@ tests/__pycache__/
 venv_vie/
 
 #sphinx
-make.bat
-Makefile
-build/doctrees
-source/
+#make.bat
+#Makefile
+#build/doctrees
+#source/
