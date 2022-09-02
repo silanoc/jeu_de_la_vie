@@ -110,6 +110,17 @@ def menu_principal() -> None:
     controleur_vie.gestion_choix_menu_principal(choix)
 
 
+def demande_int_superieur_zero(question) -> int:
+    ok: bool = False
+    while  ok is False or nb < 0 :
+        nb = questionary.text(question).ask()
+        try:
+            nb = int(nb)
+            ok: bool = True
+        except:
+            ok: bool = False
+    return nb
+
 def choix_taille_grille() -> None:
     """L'utilisateur choisi la taille de la grille de jeu.
 
@@ -119,6 +130,9 @@ def choix_taille_grille() -> None:
     efface_console()
     affiche: str = les_ecrans.ecran_demande_taille_grille()
     print(affiche)
+    ligne = demande_int_superieur_zero("nombre de ligne")
+    colonne = demande_int_superieur_zero("nombre de colonne")
+    """
     ok: bool = False
     while  ok is False or ligne < 0 :
         ligne: int = questionary.text("nombre de ligne").ask()
@@ -135,6 +149,7 @@ def choix_taille_grille() -> None:
             ok: bool = True
         except:
             ok: bool = False
+    """
     controleur_vie.gestion_choix_taille(ligne, colonne)
 
 

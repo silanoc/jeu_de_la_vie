@@ -5,6 +5,9 @@
 
 import pytest
 import os
+
+import questionary
+
 import jeu_de_la_vie.vue_vie as vue_vie
 
 # Ligne nécessaire pour certaines configurations
@@ -23,6 +26,7 @@ class Testvue_vie():
         assert type(ecran.ecran_debut_partie()) == str and ecran.ecran_debut_partie() != ""
         assert type(ecran.ecran_quitter()) == str and ecran.ecran_quitter() != ""
         
-    def test_demande_int_superieur_zero(self) -> None:
-        nb = vue_vie.demande_int_superieur_zero()
+    def test_demande_int_superieur_zero(self):
+        """il faut penser à faire pytest -s pour demander la main"""
+        nb = vue_vie.demande_int_superieur_zero("ma question de test, entrer un int > 0")
         assert type(nb) == int and nb > 0
