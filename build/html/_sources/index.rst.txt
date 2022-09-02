@@ -25,6 +25,7 @@ Welcome to Jeu de la vie's documentation!
    :caption: Tests :
 
    ./test_modele_vie.rst
+   ./test_vue_vie
 
 Indices and tables
 ==================
