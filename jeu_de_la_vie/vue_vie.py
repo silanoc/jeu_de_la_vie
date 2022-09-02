@@ -111,6 +111,13 @@ def menu_principal() -> None:
 
 
 def demande_int_superieur_zero(question) -> int:
+    """demande via questionnary un nombre entier positif supérieur à zero
+    
+    :param int question: la question qui va être affichée par questionary.
+    
+    :returns: nb 
+    :rtype: int
+    :"""
     ok: bool = False
     while  ok is False or nb < 0 :
         nb = questionary.text(question).ask()
@@ -121,10 +128,11 @@ def demande_int_superieur_zero(question) -> int:
             ok: bool = False
     return nb
 
+
 def choix_taille_grille() -> None:
     """L'utilisateur choisi la taille de la grille de jeu.
 
-    Demande à l'utilisateur deux nombres entiers positifs ligne et colonne.
+    Demande 2 nombres entiers positifs ligne et colonne via la methode demande_int_superieur_zero.
     Les transmet à la fonction gestion_choix_taille du module controleur_vie.
     """
     efface_console()
@@ -132,24 +140,6 @@ def choix_taille_grille() -> None:
     print(affiche)
     ligne = demande_int_superieur_zero("nombre de ligne")
     colonne = demande_int_superieur_zero("nombre de colonne")
-    """
-    ok: bool = False
-    while  ok is False or ligne < 0 :
-        ligne: int = questionary.text("nombre de ligne").ask()
-        try:
-            ligne: int = int(ligne)
-            ok: bool = True
-        except:
-            ok: bool = False
-    ok: bool = False
-    while ok is False or colonne < 0:
-        colonne:int = questionary.text("nombre de colonne").ask()
-        try:
-            colonne: int = int(colonne)
-            ok: bool = True
-        except:
-            ok: bool = False
-    """
     controleur_vie.gestion_choix_taille(ligne, colonne)
 
 
